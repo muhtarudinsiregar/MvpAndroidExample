@@ -14,13 +14,11 @@ class MainActivity : AppCompatActivity(), MainMVP.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val presenter: MainPresenter by lazy { MainPresenter(this) }
 
         button.setOnClickListener {
-            this@MainActivity.runOnUiThread(java.lang.Runnable {
-                presenter.displayFactInTextView()
-            })
-
+            presenter.displayFactInTextView()
         }
 
     }

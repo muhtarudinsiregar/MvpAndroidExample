@@ -10,8 +10,10 @@ class MainMVP {
 
     interface Presenter {
         fun displayFactInTextView()
-        fun setNameOnText(name: String)
+        fun setNameOnText(name: String?)
     }
 
-    interface Interactor {}
+    interface Interactor {
+        fun getFactRandomFromServer()
+    }
 }

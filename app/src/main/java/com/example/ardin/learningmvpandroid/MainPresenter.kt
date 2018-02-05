@@ -5,8 +5,10 @@ package com.example.ardin.learningmvpandroid
  */
 class MainPresenter(var view: MainMVP.View) : MainMVP.Presenter {
     val interactor = MainInteractor(this)
-    override fun setNameOnText(name: String) {
-        view.setNameOnText(name)
+    override fun setNameOnText(name: String?) {
+        if (name != null) {
+            view.setNameOnText(name)
+        }
     }
 
 
